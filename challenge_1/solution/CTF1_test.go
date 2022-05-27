@@ -10,10 +10,22 @@ import (
 	"testing"
 )
 
+// test environment data
+/*
 const (
 	ganacheUrl    = "http://127.0.0.1:8545"
 	setupAddress  = "0x09CE6D88e0191eEb3fa5CD9ED5518ad46b3EBeCC"
 	walletAddress = "0xe585809A9D52b6905ad014af286ac4B378d5a7d4"
+	privateKey = "60566eee170a8a0dd4a587f225d95f449dd3943d7a4ec1aa2d96eec2d58d9441"
+)
+*/
+
+// CTF environment data
+const (
+	ganacheUrl    = "http://35.160.101.66:8545/a4c483cc-061c-4cc3-a4f2-1b681c5ab7f1"
+	setupAddress  = "0xAE55b68d9871FD0329F461c013AC5f24614e962C"
+	walletAddress = "0x850f9276DfE2b26eDBC6fD42268062E89D3243F4"
+	privateKey    = "0xab52a8fec71c37b80507bc4cdb37989fe56ed4e23d10e064f15e080ae3696fa9"
 )
 
 var (
@@ -52,7 +64,7 @@ func TestCTF1(t *testing.T) {
 			var cl tinyeth.Client
 			require.NoError(t, cl.Connect(ganacheUrl))
 			// use provided account details
-			account, err := tinyeth.LoadAccount("60566eee170a8a0dd4a587f225d95f449dd3943d7a4ec1aa2d96eec2d58d9441")
+			account, err := tinyeth.LoadAccount(privateKey)
 			require.NoError(t, err)
 			// set target contract address
 			targetContract := tinyeth.ParseAddress(setupAddress)
@@ -77,7 +89,7 @@ func TestCTF1(t *testing.T) {
 			var cl tinyeth.Client
 			require.NoError(t, cl.Connect(ganacheUrl))
 			// use provided account details
-			account, err := tinyeth.LoadAccount("60566eee170a8a0dd4a587f225d95f449dd3943d7a4ec1aa2d96eec2d58d9441")
+			account, err := tinyeth.LoadAccount(privateKey)
 			require.NoError(t, err)
 			// set target contract address
 			targetContract := tinyeth.ParseAddress(walletAddress)
@@ -107,7 +119,7 @@ func TestCTF1(t *testing.T) {
 			var cl tinyeth.Client
 			require.NoError(t, cl.Connect(ganacheUrl))
 			// use provided account details
-			account, err := tinyeth.LoadAccount("60566eee170a8a0dd4a587f225d95f449dd3943d7a4ec1aa2d96eec2d58d9441")
+			account, err := tinyeth.LoadAccount(privateKey)
 			require.NoError(t, err)
 			// set target contract address
 			targetContract := tinyeth.ParseAddress(walletAddress)
@@ -138,7 +150,7 @@ func TestCTF1(t *testing.T) {
 			var cl tinyeth.Client
 			require.NoError(t, cl.Connect(ganacheUrl))
 			// use provided account details
-			account, err := tinyeth.LoadAccount("60566eee170a8a0dd4a587f225d95f449dd3943d7a4ec1aa2d96eec2d58d9441")
+			account, err := tinyeth.LoadAccount(privateKey)
 			require.NoError(t, err)
 			// set target contract address
 			targetContract := tinyeth.ParseAddress(setupAddress)
